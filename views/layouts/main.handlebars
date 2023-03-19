@@ -11,9 +11,30 @@
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      Mersopolis Tech Blog
-    </h1>
+    <a href="#">
+      <h1>
+        Mersopolis Tech Blog
+      </h1>
+    </a>
+    <nav>
+      <ul>
+        <a href="#">
+          <li>Dashboard</li>
+        </a>
+        {{#if req.session.logged_in}}
+        <a href="#">
+          <li>Profile</li>
+        </a>
+        <a href="#">
+          <li>Log Out</li>
+        </a>
+        {{else}}
+        <a href="#">
+          <li>Log In</li>
+        </a>
+        {{/if}}
+      </ul>
+    </nav>
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}
