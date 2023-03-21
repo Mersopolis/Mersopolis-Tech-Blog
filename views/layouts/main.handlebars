@@ -11,25 +11,20 @@
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
-    <a href="#">
+    <a href="../">
       <h1>
         Mersopolis Tech Blog
       </h1>
     </a>
     <nav>
       <ul>
-        <a href="#">
+        {{#if logged_in}}
+        <a href="../dashboard">
           <li>Dashboard</li>
         </a>
-        {{#if req.session.logged_in}}
-        <a href="#">
-          <li>Profile</li>
-        </a>
-        <a href="#">
-          <li>Log Out</li>
-        </a>
+        <button class="no-button" id="logout">Log Out</button>
         {{else}}
-        <a href="#">
+        <a href="../login">
           <li>Log In</li>
         </a>
         {{/if}}
@@ -42,6 +37,10 @@
   <footer>
       
   </footer>
+<!-- Render script for logged in users only -->
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
 </body>
 
 </html>
