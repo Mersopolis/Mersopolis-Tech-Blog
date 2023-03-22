@@ -25,7 +25,7 @@
         <button class="no-button" id="logout">Log Out</button>
         {{else}}
         <a href="../login">
-          <li>Log In</li>
+          <li>Log In/Sign Up</li>
         </a>
         {{/if}}
       </ul>
@@ -34,13 +34,18 @@
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
+  <!-- Footer -->
   <footer>
-      
+    <!--Copyright-->
+    <h5>Website made by Devon Ethington</h5>
+    <h6>&copy; 2023 Devon Ethington</h6>
   </footer>
-<!-- Render script for logged in users only -->
-{{#if logged_in}}
-<script src="/js/logout.js"></script>
-{{/if}}
+
+  <!-- Scripts -->
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>

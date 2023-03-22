@@ -2,3 +2,9 @@
   background-color: darkslategray;
   color: lightskyblue;
 }
+header {
+  background-color: slategray;
+}
+header * {
+  background-color: slategray;
+}

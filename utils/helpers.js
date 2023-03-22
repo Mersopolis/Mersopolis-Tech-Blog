@@ -1,5 +1,6 @@
 module.exports = {
-  placeholder: () => {
-    return `<span>placeholder${placeholder}</span>`;
-  },
+  format_date: (date) => {
+
+    return date.toLocaleDateString();
+  }
 };
