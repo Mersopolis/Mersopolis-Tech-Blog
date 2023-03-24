@@ -10,7 +10,8 @@ router.post("/", withAuth, async (req, res) => {
     });
 
     res.status(200).json(newBlogPost);
-  } catch (err) {
+  }
+  catch (err) {
     res.status(400).json(err);
   }
 });
@@ -23,7 +24,8 @@ router.post("/:id", withAuth, async (req, res) => {
     });
 
     res.status(200).json(newComment);
-  } catch (err) {
+  }
+  catch (err) {
     res.status(400).json(err);
   }
 });
@@ -43,7 +45,8 @@ router.delete("/:id", withAuth, async (req, res) => {
     }
 
     res.status(200).json(blogPostData);
-  } catch (err) {
+  }
+  catch (err) {
     res.status(500).json(err);
   }
 });

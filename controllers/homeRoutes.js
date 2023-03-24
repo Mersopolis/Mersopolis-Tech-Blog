@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { BlogPost, User } = require("../models");
+const { BlogPost, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -30,6 +30,10 @@ router.get("/blogPost/:id", withAuth, async (req, res) => {
           model: User,
           attributes: ["name"],
         },
+        {
+          model: Comment,
+          include: [User],
+        },
       ],
     });
 
@@ -39,7 +43,9 @@ router.get("/blogPost/:id", withAuth, async (req, res) => {
       ...blogPost,
       logged_in: req.session.logged_in
     });
-  } catch (err) {
+  }
+  catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
